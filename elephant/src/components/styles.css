@@ -1,0 +1,42 @@
+/* Ajoutez vos styles ici */
+.git-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.git-category {
+    margin-bottom: 20px;
+}
+
+.git-category-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.git-command {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.git-command h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}

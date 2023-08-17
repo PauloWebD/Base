@@ -1,0 +1,109 @@
+{
+    "categories": [
+        {
+            "name": "Configuration",
+            "commands": [
+                {
+                    "title": "Configurer l'identité",
+                    "command": "git config --global user.name 'Votre Nom'",
+                    "description": "Configurez votre nom d'utilisateur pour les commits."
+                },
+                {
+                    "title": "Configurer l'email",
+                    "command": "git config --global user.email 'votre@email.com'",
+                    "description": "Configurez votre adresse email pour les commits."
+                },
+                {
+                    "title": "Voir la configuration",
+                    "command": "git config --list",
+                    "description": "Affichez la configuration Git actuelle."
+                },
+                {
+                    "title": "Configurer l'éditeur de messages de commit",
+                    "command": "git config --global core.editor 'nom-de-votre-éditeur'",
+                    "description": "Configurez l'éditeur utilisé pour saisir les messages de commit."
+                },
+                {
+                    "title": "Configurer les informations de fusion (merge)",
+                    "command": "git config --global merge.tool 'nom-de-votre-outil'",
+                    "description": "Configurez l'outil de fusion utilisé lors des opérations de fusion."
+                },
+                {
+                    "title": "Voir les alias configurés",
+                    "command": "git config --get-regexp alias.",
+                    "description": "Affichez la liste des alias Git configurés."
+                }
+            ]
+        },
+        {
+            "name": "Créer & Cloner",
+            "commands": [
+                {
+                    "title": "Initialiser un dépôt",
+                    "command": "git init",
+                    "description": "Initialisez un nouveau dépôt Git dans le répertoire actuel."
+                },
+                {
+                    "title": "Cloner un dépôt distant",
+                    "command": "git clone <URL>",
+                    "description": "Clonez un dépôt Git distant dans un répertoire local."
+                },
+                {
+                    "title": "Créer une nouvelle branche",
+                    "command": "git checkout -b <nom-de-branche>",
+                    "description": "Créez une nouvelle branche et basculez-y."
+                },
+                {
+                    "title": "Lister les branches",
+                    "command": "git branch",
+                    "description": "Affichez la liste des branches locales."
+                },
+                {
+                    "title": "Lister les dépôts distants",
+                    "command": "git remote -v",
+                    "description": "Affichez la liste des dépôts distants configurés."
+                },
+                {
+                    "title": "Créer une copie locale d'une branche distante",
+                    "command": "git checkout -b <nom-de-branche> origin/<nom-de-branche>",
+                    "description": "Créez une copie locale d'une branche distante pour la suivre."
+                }
+            ]
+        },
+        {
+            "name": "Gestion des Branches",
+            "commands": [
+                {
+                    "title": "Basculer vers une branche",
+                    "command": "git checkout <nom-de-branche>",
+                    "description": "Basculez vers une autre branche."
+                },
+                {
+                    "title": "Créer une nouvelle branche",
+                    "command": "git branch <nom-de-branche>",
+                    "description": "Créez une nouvelle branche sans y basculer."
+                },
+                {
+                    "title": "Fusionner une branche",
+                    "command": "git merge <nom-de-branche>",
+                    "description": "Fusionnez une branche dans la branche actuelle."
+                },
+                {
+                    "title": "Supprimer une branche",
+                    "command": "git branch -d <nom-de-branche>",
+                    "description": "Supprimez une branche locale après la fusion."
+                },
+                {
+                    "title": "Lister les branches distantes",
+                    "command": "git branch -r",
+                    "description": "Affichez la liste des branches distantes."
+                },
+                {
+                    "title": "Renommer une branche",
+                    "command": "git branch -m <nouveau-nom>",
+                    "description": "Renommez la branche actuelle."
+                }
+            ]
+        }
+    ]
+}
