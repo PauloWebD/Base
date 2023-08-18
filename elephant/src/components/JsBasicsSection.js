@@ -1,32 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
+import jsBasics from '../data/jsBasics.json';
+import './styles.css'; // Importez le fichier de styles CSS
 
-const JsConcept = ({ title, example, code }) => (
-    <div className="js-concept">
+const JsCommand = ({ title, code, description }) => (
+    <div className="command">
         <h3>{title}</h3>
-        <div className="example">
-            <div className="example-preview">{example}</div>
-            <div className="example-code">
-                <pre>{code}</pre>
-            </div>
+        <pre><code>{code}</code></pre>
+        <p>{description}</p>
+    </div>
+);
+
+const Modal = ({ content, onClose }) => (
+    <div className="modal-overlay">
+        <div className="modal">
+            <button className="close-button" onClick={onClose}>Close</button>
+            {content}
         </div>
     </div>
 );
 
-const JsBasicsSection = () => (
-    <section>
-        <h2>JavaScript Basics</h2>
-        <JsConcept
-            title="Arrow Function"
-            example={<p>{/* Affichez votre exemple d'animation ici */}</p>}
-            code={`const add = (a, b) => a + b;`}
-        />
-        <JsConcept
-            title="Variables"
-            example={<p>{/* Affichez votre exemple d'animation ici */}</p>}
-            code={`let name = "John";`}
-        />
-        {/* Ajoutez d'autres composants JsConcept ici */}
-    </section>
-);
+const JsBasicsSection = () => {
+    const [modalContent, setModalContent] = useState(null);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const handleTitleClick = (cmd) => {
+        setModalContent(cmd);
+        setIsModalVisible(true);
+    };
+
+    const handleCloseButtonClick = () => {
+        setIsModalVisible(false);
+    };
+
+    return (
+        <section className="section">
+            {jsBasics.categories.map((category, index) => (
+                <div
+                    key={index}
+                    className="category"
+                >
+                    <h3
+                        className="category-title"
+                        onClick={() => handleTitleClick(category)}
+                    >
+                        {category.name}
+                    </h3>
+                </div>
+            ))}
+
+            {isModalVisible && modalContent && (
+
+                <Modal
+                    content={
+                        <div className="category">
+                            <h3 className="category-title">
+                                {modalContent.name}
+                            </h3>
+                            {modalContent.commands.map((cmd, idx) => (
+                                <div key={idx}>
+                                    <h4>{cmd.title}</h4>
+                                    <pre><code>{cmd.code}</code></pre>
+                                    <p>{cmd.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    }
+                    onClose={handleCloseButtonClick}
+                />
+            )}
+        </section>
+    );
+};
 
 export default JsBasicsSection;

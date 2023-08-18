@@ -1,0 +1,109 @@
+{
+    "categories": [
+        {
+            "name": "Variables",
+            "commands": [
+                {
+                    "title": "Déclarer une variable",
+                    "code": "let variable = 'valeur';",
+                    "description": "Déclare une variable et lui attribue une valeur."
+                },
+                {
+                    "title": "Modifier la valeur d'une variable",
+                    "code": "variable = 'nouvelle valeur';",
+                    "description": "Modifie la valeur d'une variable déjà déclarée."
+                },
+                {
+                    "title": "Constantes",
+                    "code": "const constante = 'valeur';",
+                    "description": "Déclare une constante avec une valeur immuable."
+                },
+                {
+                    "title": "Portée des variables",
+                    "code": "if (condition) {\n  let variableLocale = 'locale';\n}\n// variableLocale est inaccessible ici",
+                    "description": "Exploration de la portée des variables avec let et const."
+                },
+                {
+                    "title": "Opérateurs arithmétiques",
+                    "code": "const addition = 5 + 3;\nconst soustraction = 10 - 4;\nconst multiplication = 2 * 6;",
+                    "description": "Utilisation des opérateurs +, -, * pour effectuer des calculs."
+                },
+                {
+                    "title": "Opérateurs de comparaison",
+                    "code": "const estVrai = 5 > 3;\nconst estFaux = 10 === '10';",
+                    "description": "Comparaison de valeurs avec les opérateurs >, <, ===, etc."
+                }
+            ]
+        },
+        {
+            "name": "Boucles",
+            "commands": [
+                {
+                    "title": "Boucle for",
+                    "code": "for (let i = 0; i < 5; i++) {\n  // Code à répéter\n}",
+                    "description": "Exécute un bloc de code plusieurs fois avec une boucle for."
+                },
+                {
+                    "title": "Boucle while",
+                    "code": "let n = 0;\nwhile (n < 3) {\n  // Code à répéter\n  n++;\n}",
+                    "description": "Exécute un bloc de code tant qu'une condition est vraie."
+                },
+                {
+                    "title": "Boucle do-while",
+                    "code": "let x = 0;\ndo {\n  // Code à répéter\n  x++;\n} while (x < 5);",
+                    "description": "Exécute un bloc de code au moins une fois, puis tant qu'une condition est vraie."
+                },
+                {
+                    "title": "Break",
+                    "code": "for (let i = 0; i < 10; i++) {\n  if (i === 5) {\n    break;\n  }\n}",
+                    "description": "Interrompt l'exécution d'une boucle ou d'une instruction switch."
+                },
+                {
+                    "title": "Continue",
+                    "code": "for (let i = 0; i < 5; i++) {\n  if (i === 2) {\n    continue;\n  }\n}",
+                    "description": "Passe à l'itération suivante dans une boucle."
+                },
+                {
+                    "title": "For...in",
+                    "code": "const person = { name: 'John', age: 30 };\nfor (const key in person) {\n  console.log(key, person[key]);\n}",
+                    "description": "Parcourt les propriétés énumérables d'un objet."
+                }
+            ]
+        },
+        {
+            "name": "Fonctions",
+            "commands": [
+                {
+                    "title": "Déclaration de fonction",
+                    "code": "function nomDeFonction(parametre) {\n  // Code à exécuter\n}",
+                    "description": "Déclare une fonction avec un nom et des paramètres."
+                },
+                {
+                    "title": "Appel de fonction",
+                    "code": "nomDeFonction(valeur);",
+                    "description": "Appelle une fonction avec des arguments."
+                },
+                {
+                    "title": "Fonctions fléchées",
+                    "code": "const addition = (a, b) => a + b;",
+                    "description": "Utilisation de fonctions fléchées pour des fonctions courtes."
+                },
+                {
+                    "title": "Valeur de retour",
+                    "code": "function carre(nombre) {\n  return nombre * nombre;\n}",
+                    "description": "Utilisation de l'instruction return pour renvoyer une valeur."
+                },
+                {
+                    "title": "Portée des fonctions",
+                    "code": "function externe() {\n  let variable = 'externe';\n  function interne() {\n    console.log(variable);\n  }\n  interne();\n}\nexterne();",
+                    "description": "Exploration de la portée des fonctions et des variables."
+                },
+                {
+                    "title": "Fonctions anonymes",
+                    "code": "const multiplier = function(x, y) {\n  return x * y;\n};",
+                    "description": "Création de fonctions sans nom et affectation à des variables."
+                }
+            ]
+        }
+    ]
+}

@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <GitSection />
-      {/* <JsBasicsSection /> */}
+      <JsBasicsSection />
       {/* <HtmlBasicsSection /> */}
       {/* <CssBasicsSection /> */}
     </div>

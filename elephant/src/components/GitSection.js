@@ -3,51 +3,68 @@ import gitCommands from '../data/gitCommands.json';
 import './styles.css'; // Importez le fichier de styles CSS
 
 const GitCommand = ({ title, command, description }) => (
-    <div className="git-command">
+    <div className="command">
         <h3>{title}</h3>
         <p><code>{command}</code></p>
         <p>{description}</p>
     </div>
 );
 
+const Modal = ({ content, onClose }) => (
+    <div className="modal-overlay">
+        <div className="modal">
+            <button className="close-button" onClick={onClose}>Close</button>
+            {content}
+        </div>
+    </div>
+);
+
 const GitSection = () => {
     const [modalContent, setModalContent] = useState(null);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const handleTitleHover = (cmd) => {
+    const handleTitleClick = (cmd) => {
         setModalContent(cmd);
+        setIsModalVisible(true);
     };
 
-    const handleTitleLeave = () => {
-        setModalContent(null);
+    const handleCloseButtonClick = () => {
+        setIsModalVisible(false);
     };
 
     return (
-        <section className="git-section">
+        <section className="section">
             {gitCommands.categories.map((category, index) => (
-
-                <h3
-                    className="git-category-title"
-                    onMouseEnter={() => handleTitleHover(category)}
-                    onMouseLeave={handleTitleLeave}
+                <div
+                    key={index}
+                    className="category"
                 >
-                    {category.name}
-                </h3>
-
+                    <h3
+                        className="category-title"
+                        onClick={() => handleTitleClick(category)}
+                    >
+                        {category.name}
+                    </h3>
+                </div>
             ))}
 
-            {modalContent && (
-                <div className=" modal">
-                    <div className="git-category">
-                        <h3 className="git-category-title">
-                            {modalContent && modalContent.name}</h3>
-                        {modalContent && modalContent.commands.map((cmd, idx) => (
-                            <div key={idx}>
-                                <p><code>{cmd.command}</code></p>
-                                <p>{cmd.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+            {isModalVisible && modalContent && (
+                <Modal
+                    content={
+                        <div className="category">
+                            <h3 className="category-title">
+                                {modalContent.name}
+                            </h3>
+                            {modalContent.commands.map((cmd, idx) => (
+                                <div key={idx}>
+                                    <p><code>{cmd.command}</code></p>
+                                    <p>{cmd.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    }
+                    onClose={handleCloseButtonClick}
+                />
             )}
         </section>
     );
